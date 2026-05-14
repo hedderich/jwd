@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive map of cycling, hiking, and running routes">
+    <meta property="og:title" content="jwd">
+    <meta property="og:description" content="Interactive map of cycling, hiking, and running routes">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚲</text></svg>">
+    <title>jwd</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.css">
+    <script src="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <div class="wrap nav-inner">
+            <a href="#/" class="logo">jwd</a>
+        </div>
+    </nav>
+    <main id="app">
+        <noscript><div class="wrap"><p>JavaScript is required to view routes</p></div></noscript>
+        <div class="wrap">
+            <div class="loading" aria-busy="true">Loading…</div>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

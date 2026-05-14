@@ -1,0 +1,331 @@
+/* jwd — overrides on Pico.css */
+
+:root {
+  --pico-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --pico-background-color: #f7f7f5;
+  --pico-card-background-color: #fff;
+  --pico-block-spacing-vertical: 0;
+  --accent: #1a5c3a;
+  --accent-light: #e6f4ec;
+}
+
+body {
+  background: #f7f7f5;
+  background-image:
+    radial-gradient(ellipse at 15% -5%, rgba(26,92,58,0.1) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 90%, rgba(26,92,58,0.07) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 50%, rgba(26,92,58,0.03) 0%, transparent 60%);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+html {
+  background: #f7f7f5;
+}
+
+main {
+  padding: 0;
+  margin: 0;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Nav */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 247, 245, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  height: 52px;
+}
+
+.logo {
+  font-weight: 800;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: -0.03em;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+  padding: 1rem 0 3rem;
+}
+
+/* Card */
+.card {
+  display: block;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(26,92,58,0.09), 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.card-map {
+  height: 190px;
+  background: #eceee9;
+}
+
+.card-body {
+  padding: 0.9rem 1.1rem 1.1rem;
+}
+
+.card-body h3 {
+  font-size: 1rem;
+  font-weight: 650;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.card-meta {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.pill {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.2em 0.55em;
+  border-radius: 99px;
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.pill.type-cycling, .pill.type-bike, .pill.type-mtb {
+  background: #e6f4ec;
+  color: #1a5c3a;
+}
+
+.pill.type-hiking, .pill.type-walking {
+  background: #e0eaf3;
+  color: #1b4965;
+}
+
+.pill.type-running, .pill[class*="type-trail"] {
+  background: #fde8d8;
+  color: #c4621a;
+}
+
+.pill.muted {
+  background: transparent;
+  color: #888;
+  border: 1px solid #e5e5e5;
+}
+
+/* Detail */
+.detail-map {
+  width: 100%;
+  height: 52vh;
+  min-height: 300px;
+}
+
+.detail-body {
+  position: relative;
+  z-index: 10;
+  margin-top: -1.5rem;
+  background: #fff;
+  border-radius: 14px 14px 0 0;
+  padding: 1.75rem 1.5rem 3rem;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.05);
+}
+
+.back {
+  font-size: 0.82rem;
+  color: #888;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+.back:hover { color: var(--accent); }
+
+.detail-body h1 {
+  font-size: 1.5rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.25rem;
+}
+
+.detail-date {
+  color: #888;
+  font-size: 0.85rem;
+  margin: 0.15rem 0 0.75rem;
+  padding: 0;
+}
+
+.desc {
+  color: #666;
+  line-height: 1.6;
+  margin: 0.4rem 0 1.25rem;
+}
+
+.stats {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 1.25rem 0;
+}
+
+.stat {
+  background: #f7f7f5;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  min-width: 85px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+}
+
+.stat .unit {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.stat small {
+  font-size: 0.65rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Profile */
+.profile { margin: 1.25rem 0; }
+
+.profile {
+  position: relative;
+}
+
+.profile svg {
+  width: 100%;
+  height: 80px;
+  display: block;
+  border-radius: 8px;
+  background: #f7f7f5;
+}
+
+.profile-labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  font-size: 0.6rem;
+  color: #888;
+}
+.profile-y-max {
+  position: absolute;
+  top: 3px;
+  left: 6px;
+}
+.profile-y-min {
+  position: absolute;
+  bottom: 3px;
+  left: 6px;
+}
+.profile-x-end {
+  position: absolute;
+  bottom: 3px;
+  right: 6px;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+a.dl-btn[role="button"] {
+  display: block;
+  flex: 1;
+  text-align: center;
+  --pico-background-color: var(--btn-color, var(--accent));
+  --pico-border-color: var(--btn-color, var(--accent));
+}
+a.dl-btn[role="button"]:hover {
+  --pico-background-color: color-mix(in srgb, var(--btn-color, var(--accent)) 80%, #000);
+  --pico-border-color: color-mix(in srgb, var(--btn-color, var(--accent)) 80%, #000);
+}
+a.dl-btn.secondary[role="button"] {
+  --pico-background-color: transparent;
+  --pico-color: var(--btn-color, var(--accent));
+  --pico-border-color: var(--btn-color, var(--accent));
+  border: 2px solid var(--btn-color, var(--accent));
+}
+a.dl-btn.secondary[role="button"]:hover {
+  --pico-background-color: color-mix(in srgb, var(--btn-color, var(--accent)) 10%, transparent);
+  --pico-border-color: var(--btn-color, var(--accent));
+  --pico-color: var(--btn-color, var(--accent));
+}
+
+/* Map markers */
+.maplibregl-marker svg {
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.2));
+}
+
+/* Reset Pico button styles inside map controls */
+.maplibregl-ctrl button {
+  width: 29px;
+  height: 29px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  line-height: 1;
+  font-size: 16px;
+}
+
+/* Map attribution */
+.maplibregl-ctrl-attrib {
+  font-size: 10px;
+  opacity: 0.5;
+  background: transparent !important;
+}
+.maplibregl-ctrl-attrib-button {
+  display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .card-map { height: 160px; }
+  .detail-map { height: 38vh; min-height: 240px; }
+  .detail-body { padding: 1.25rem 1.1rem 2.5rem; margin-top: -1rem; }
+  .detail-body h1 { font-size: 1.25rem; }
+  .dl-btn { width: 100%; justify-content: center; }
+}
+
+@media (min-width: 768px) {
+  .detail-body {
+    max-width: 680px;
+    margin: -2rem auto 0;
+    border-radius: 14px;
+    z-index: 10;
+  }
+}
